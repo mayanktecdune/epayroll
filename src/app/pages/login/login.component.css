@@ -1,3 +1,55 @@
 body {
-    background-color: #4A9BE6;
+  background-color: #4A9BE6;
 }
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+}
+
+.loginCard {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+  width: 200px;
+  border-radius: 25px;
+  background-color: #3785CD;
+  margin-top: 10px;
+  position: relative;
+}
+
+.loginCredUserID {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30px;
+    width: 150px;
+    background-color: white;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    left: 22px;
+    text-align: center;
+    font-size: 10px;
+  }
+
+  .loginCredPassword {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30px;
+    width: 150px;
+    background-color: white;
+    border-radius: 5px;
+    position: absolute;
+    top: 50px;
+    left: 22px;
+    text-align: center;
+    font-size: 10px;
+  }
+
+
+

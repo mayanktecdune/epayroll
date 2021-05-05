@@ -4,16 +4,50 @@
   </div>
 
   <p-card class="loginCard">
-    <div class="p-grid">
-      <div class="p-col-12">
-        <input type="text" placeholder="User ID">
+    <!-- <p-messages [(value)]="msgs"></p-messages> -->
+    <form #loginForm="ngForm" (ngSubmit)="loginFormData(loginForm)" autocomplete="off">
+      <div class="p-grid">
+        <div class="p-col-12">
+          <span class="md-inputfield">
+
+            <span class="material-icons loginIcon">person</span>
+            <input type="email" pInputText name="email" #email="ngModel" ngModel placeholder="User ID" required>
+
+            <span *ngIf="(email.touched || loginForm.submitted) && email.errors?.required" style="color:#c44448;">
+              <span style="float: left;font-size: small;">
+                User ID is required
+              </span>
+            </span>
+          </span>
+        </div>
+        <div class="p-col-12">
+          <span class="md-inputfield">
+            <span class="material-icons passwordIcon">lock</span>
+            <input [type]="hide ? 'password' : 'text'" pInputText name="password" #password="ngModel"
+              placeholder="Password" ngModel required>
+            <span class="uiInputIcon viewPasswordEye">
+              <i (click)="hide = !hide" class="material-icons">{{hide ? 'visibility_off' :
+                    'visibility'}}</i>
+            </span>
+            <span *ngIf="(password.touched || loginForm.submitted) && password.errors?.required" style="color:#c44448;">
+              <span style="float: left;font-size: small;">
+                Please enter a password
+              </span>
+            </span>
+          </span>
+        </div>
+        <button pButton class="loginButton" type="submit" value="ui-icon-beenhere" icon="ui-icon-beenhere">
+          Login
+        </button>
       </div>
-      <div class="p-col-12">
-        <input type="text" placeholder="Password">
-      </div>
-      <button pButton class="loginButton" type="button" value="ui-icon-beenhere" icon="ui-icon-beenhere">
-        Login
-      </button>
+    </form>
+    <div class="forgotPassword">
+      <span style="margin-right: 8px;"><a style="color:#3785CD;" href="">Forgot Password</a></span>
+      <span style="margin-left: 8px;"><a style="color:#3785CD;" href="">Create Account</a></span>
     </div>
+
+
   </p-card>
+
+
 </body>

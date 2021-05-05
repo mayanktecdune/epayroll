@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
     selector: 'app-login',
@@ -9,6 +10,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
     bodyTag: HTMLBodyElement = document.getElementsByTagName('body')[0];
     htmlTag: HTMLElement = document.getElementsByTagName('html')[0];
+    hide = true;
 
     constructor() { }
 
@@ -20,6 +22,12 @@ export class LoginComponent implements OnInit, OnDestroy {
     ngOnDestroy() {
         this.bodyTag.classList.remove('login');
         this.htmlTag.classList.remove('login');
+      }
+
+      loginFormData(formData: NgForm) {
+        
+        console.log(formData.value);
+        
       }
 
 }
